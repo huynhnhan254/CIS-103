@@ -1,0 +1,21 @@
+decimal = int(input("Enter a decimal integer: "))
+if decimal == 0: 
+    print(0)
+else:
+    print("Quotient Remainder Binary")
+    ostring = ""
+    while decimal > 0:
+        remainder = decimal % 8
+        decimal = decimal // 8
+        ostring = str(remainder) + ostring
+        print("%5d%8d%12s" % (decimal, remainder, ostring))
+    print("The binary representation is", ostring)  
+
+
+ostring = input("Enter a string of bits: ")
+decimal = 0
+exponent = len(ostring) - 1
+for digit in ostring:
+    decimal = decimal + int(digit) * 8 ** exponent
+    exponent = exponent - 1
+print("The integer value is", decimal)

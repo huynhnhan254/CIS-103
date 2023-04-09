@@ -1,0 +1,50 @@
+# Put your code here
+lyst = [3,1,7,1,4,10]
+
+def main():
+    print("List: ", lyst)
+    print("Mode: ", mode(lyst))
+    print("Median: ", median(lyst))
+    print("Mean: ", mean(lyst))
+
+def median(a):
+    a = sorted(a)
+    mid = (len(a) // 2)  
+    if (len(a) % 2 != 0):               
+        return a[mid]
+    else:
+        return (a[mid] + a[mid-1]) / 2 
+    
+def mode(b):
+    dictionary = {}
+    for number in b:
+        totalNumb = dictionary.get(number, None)
+        #number is seen for the first time
+        if (totalNumb == None): 
+            dictionary[number] = 1
+        #number already seen
+        else:
+            dictionary[number] = totalNumb +1
+        #determine the mode
+    maximumNumb = max(dictionary.values())
+    for key in dictionary:
+        if dictionary[key] == maximumNumb:
+            return key
+
+def mean(x):
+    theSum = 0
+    if (len(x) != 0):
+        for number in x:
+            theSum += number
+        return theSum / len(x)
+    else:
+        return 0
+
+if __name__ == "__main__":
+    main()
+
+
+    
+
+
+

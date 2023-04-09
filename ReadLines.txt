@@ -1,0 +1,15 @@
+# Put your code here
+inputFile = input("Enter the input file name: ")
+outputFile =  input("Enter the output file name: ")
+
+infile = open(inputFile,"r")
+outfile = open(outputFile,"w+")
+
+lineNumber = 1
+for line in infile:    
+    outfile.write("%4d>"%lineNumber + ' ' + line)
+    lineNumber = lineNumber + 1
+
+infile.close()
+outfile.close()
+ 	
